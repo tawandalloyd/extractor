@@ -45,6 +45,10 @@ for tweet in tweets:
 
 csv_filename = "tweets.csv"
 df = pd.DataFrame(tweet_list)
+
+df['created_at'] = pd.to_datetime(df['created_at'])
+
+
 df.to_csv(csv_filename,index=False)
 
 #create client
@@ -52,7 +56,7 @@ s3 = boto3.client("s3")
 
 #upload
 S3_BUCKET_NAME = "tweets-datalake"
-S3_FOLDER_ROUTE = "tweets-datalake/python/tweetscsv/"
+S3_FOLDER_ROUTE = "python/tweetscsv/"
 
 with open(csv_filename, "rb") as f:
     s3.upload_fileobj(f,S3_BUCKET_NAME,S3_FOLDER_ROUTE +csv_filename)
