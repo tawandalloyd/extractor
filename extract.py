@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 import s3fs
 from dotenv import load_dotenv
+import boto3
 
 #load the environment variables
 load_dotenv()
@@ -42,5 +43,16 @@ for tweet in tweets:
                     }
     tweet_list.append(refined_tweet)
 
+csv_filename = "tweets.csv"
 df = pd.DataFrame(tweet_list)
-df.to_csv("mytweets.csv")
+df.to_csv(csv_filename,index=False)
+
+#create client
+s3 = boto3.client("s3")
+
+#upload
+S3_BUCKET_NAME = "tweets-datalake"
+S3_FOLDER_ROUTE = "tweets-datalake/python/tweetscsv/"
+
+with open(csv_filename, "rb") as f:
+    s3.upload_fileobj(f,S3_BUCKET_NAME,S3_FOLDER_ROUTE +csv_filename)
