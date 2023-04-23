@@ -1,5 +1,5 @@
-Project Title
-Extract_my_Tweets
+Project Title : 
+    Extract_my_Tweets
 
 Description
 This project uses Apache Airflow running on an EC2 instance to extract data from the Twitter API using Python. The extracted data is then stored in an Amazon S3 bucket, and subsequently loaded into Amazon Redshift using Amazon Glue.
