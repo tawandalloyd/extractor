@@ -9,10 +9,10 @@ from datetime import datetime
 
 def twitter_etl():
    #load the environment variables
-    access_key = "1049560705098235904-nfeoIT9JkvUSncbmN3TQztV1qvwzgN"
-    access_secret = "Xs7y2Gag6qXKM048Q4kgg4fhxg0loDAgop53hfXbybnB2"
-    consumer_key = "SXa0IeyVRoxVZbseVglZS28YB"
-    consumer_secret = "XjOn2ShPYYvN0Tjz5Cwjl9VpRxDrsutUfnjzaIQIkWNHPRLe2s"
+    access_key = ""
+    access_secret = ""
+    consumer_key = ""
+    consumer_secret = ""
 
     #twitter authentication
     auth =  tweepy.OAuthHandler(access_key, access_secret)
