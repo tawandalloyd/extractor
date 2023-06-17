@@ -18,12 +18,9 @@ Getting Started
 
         Clone the repository to your local machine.
         Create a virtual environment and activate it.
-        Install the required packages using pip install -r requirements.txt.
         Configuration
         Configure your Twitter API credentials in config.py.
-        Set your Amazon S3 bucket name in config.py.
-        Configure your Amazon Redshift credentials in config.py.
-        Set your AWS Glue job name in config.py.
+        
 
     Usage
 
@@ -40,11 +37,6 @@ Getting Started
         Amazon Redshift Documentation
         AWS Glue Documentation
         
-Feel free to customize this README file to fit your project's specific needs. Good luck with your project!
-
-
-
-
 
 
 
